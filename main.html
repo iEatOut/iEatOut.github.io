@@ -11,7 +11,7 @@
     <!-- Path to your custom app styles-->
     <link rel="stylesheet" href="css/main.css">
   </head>
-  <body>
+  <body onload="getLocation()">
     <!-- Status bar overlay for fullscreen mode-->
     <div class="statusbar-overlay"></div>
     <!-- Panels overlay-->
@@ -192,7 +192,7 @@
                       </li>
                       <li class="item-content">
                         <div class="item-inner">
-                          <div class="item-title">Thai</div>
+                          <div class="item-title list-button">Thai</div>
                         </div>
                       </li>
                     </ul>
@@ -203,6 +203,7 @@
           </div>
         </div>
       </div>
+    </div>
     <!-- GeoLocation-->
     <script>
       var x = document.getElementById("demo");
