@@ -119,3 +119,7 @@ function mainClick(ele) {
     page = $(ele).children(".item-title").text();
     mainView.router.loadPage('list.html');
 }
+
+function back() {
+    mainView.router.back();
+}
