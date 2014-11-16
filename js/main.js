@@ -56,7 +56,7 @@ $('#ieo-register-submit').click(function (e) {
     });
 });
 
-$('#ieo-profile-submit').click(function (e) {
+function profileSubmit() {
     var ref = fb.child('profiles/' + fb.getAuth().uid);
     ref.set({
         'name' : $('#ieo-profile-name').val(),
@@ -72,7 +72,7 @@ $('#ieo-profile-submit').click(function (e) {
             'treenuts' : $('#ieo-profile-allergies-treenuts').val(),
             'wheat' : $('#ieo-profile-allergies-wheat').val()
         },
-        'diet' : $('#ieo-profile-diet')
+        'diet' : $('#ieo-profile-diet').val()
     }, function (error) {
         if (error) {
             fw.alert(error.message, 'Error');
@@ -82,4 +82,6 @@ $('#ieo-profile-submit').click(function (e) {
             });
         }
     });
-});
+}
+
+$('#ieo-profile-submit').click(function (e) { profileSubmit(); });
