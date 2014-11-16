@@ -56,8 +56,8 @@ function popup(title, text, target) {
 
 $('#ieo-login-submit').click(function (e) {
    fb.authWithPassword({
-       "email"    : $('#ieo-login-email').val(),
-       "password" : $('#ieo-login-pass').val()
+       email    : $('#ieo-login-email').val(),
+       password : $('#ieo-login-pass').val()
    }, function(error, authData) {
        if (error) {
            popup('Error', error.message, '#ieo-login-submit');
@@ -65,4 +65,17 @@ $('#ieo-login-submit').click(function (e) {
            popup('Success', 'Login success!', '#ieo-login-submit');
        }
    });
+});
+
+$('#ieo-register-submit').click(function (e) {
+    fb.createUser({
+        email    : $('#ieo-register-email').val(),
+        password : $('#ieo-register-pass').val()
+    }, function(error) {
+        if (error) {
+            popup('Error', error.message, '#ieo-register-submit');
+        } else {
+            popup('Success', 'Registration success!', '#ieo-register-submit');
+        }
+    });
 });
