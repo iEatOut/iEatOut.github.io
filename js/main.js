@@ -73,7 +73,7 @@ $$(document).on('pageInit', function (e) {
                 var results = data["results"];
                 for (var i = 0; i < results.length; i++) {
                     if ($.inArray("locality", results[i]["types"])) {
-                        if (results[i]["short_name"] != "undefined") {
+                        if (!(typeof results[i]["short_name"] === 'undefined')) {
                             $("#ieo-results-title").text("Results for Near " + results[i]["short_name"]);
                         }
                         break;
