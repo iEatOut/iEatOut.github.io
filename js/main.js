@@ -23,12 +23,11 @@ $('#ieo-login-submit').click(function (e) {
        } else {
            fw.alert('Login success!', 'Success', function (e) {
                fb.child('profiles/' + fb.getAuth().uid).once('value', function(data) {
-                   mainView.router.loadPage('main.html');
-                   /*if (data.val()) {
+                   if (data.val()) {
                        mainView.router.loadPage('main.html');
                    } else {
                        mainView.router.loadPage('health.html');
-                   }*/
+                   }
                }, function (error) {
                    fw.alert(error.message, 'Error');
                });
