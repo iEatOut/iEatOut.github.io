@@ -65,7 +65,7 @@ $('#ieo-login-submit').click(function (e) {
    });
 });
 
-$$(document).on('pageBeforeRemove', function (e) {
+$$(document).on('pageAfterAnimation', function (e) {
     fw.closeModal('#ieo-login-popup');
 });
 
