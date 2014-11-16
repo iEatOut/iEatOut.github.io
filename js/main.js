@@ -5,11 +5,7 @@ var fb = new Firebase('https://sizzling-inferno-727.firebaseio.com');
 // Export selectors engine
 var $$ = Dom7;
 
-// Add view
-var mainView = fw.addView('.view-main', {
-    // Because we use fixed-through navbar we can enable dynamic navbar
-    dynamicNavbar: true
-});
+var mainView = fw.addView('#ieo-view', { dynamicNavbar: true });
 
 // Callbacks to run specific code for specific pages, for example for About page:
 fw.onPageInit('about', function (page) {
@@ -55,16 +51,18 @@ function popup(title, text, target) {
 }
 
 $('#ieo-login-submit').click(function (e) {
-   fb.authWithPassword({
+    fw.alert('Login success!', 'Success', function (e) {
+        mainView.router.loadPage('health.html');
+    });
+   /*fb.authWithPassword({
        email    : $('#ieo-login-email').val(),
        password : $('#ieo-login-pass').val()
    }, function(error, authData) {
        if (error) {
-           popup('Error', error.message, '#ieo-login-submit');
+           fw.alert(error.message, 'Error');
        } else {
-           popup('Success', 'Login success!', '#ieo-login-submit');
        }
-   });
+   });*/
 });
 
 $('#ieo-register-submit').click(function (e) {
@@ -73,9 +71,12 @@ $('#ieo-register-submit').click(function (e) {
         password : $('#ieo-register-pass').val()
     }, function(error) {
         if (error) {
-            popup('Error', error.message, '#ieo-register-submit');
+            fw.alert(error.message, 'Error');
         } else {
-            popup('Success', 'Registration success!', '#ieo-register-submit');
+            fw.alert('Registration success!\nLogin to continue.', 'Success', function (e) {
+                fw.closeModal('#ieo-register-popup');
+                fw.popup('#ieo-login-popup');
+            });
         }
     });
 });
