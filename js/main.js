@@ -67,16 +67,20 @@ $$(document).on('pageInit', function (e) {
             fw.alert(error.message, 'Error');
         });
     } else if (target.data("page") == "list") {
-        $.getJSON("https://maps.googleapis.com/maps/api/geocode/json?latlng=" +
-        lat + "," + long + "&key=AIzaSyATwdAhys3Yde0-OA0vLabSkOqsM4KZJm8", function(data) {
-            var results = data["results"];
-            for (var i = 0; i < results.length; i++) {
-                if ($.inArray("locality", results[i]["types"])) {
-                    $("#ieo-results-title").text("Results for Near " + results[i]["short_name"]);
-                    break;
+        try {
+            $.getJSON("https://maps.googleapis.com/maps/api/geocode/json?latlng=" +
+            lat + "," + long + "&key=AIzaSyATwdAhys3Yde0-OA0vLabSkOqsM4KZJm8", function (data) {
+                var results = data["results"];
+                for (var i = 0; i < results.length; i++) {
+                    if ($.inArray("locality", results[i]["types"])) {
+                        $("#ieo-results-title").text("Results for Near " + results[i]["short_name"]);
+                        break;
+                    }
                 }
-            }
-        });
+            });
+        } catch (err) {
+            
+        }
     }
 });
 
