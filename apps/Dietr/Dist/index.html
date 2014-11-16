@@ -50,13 +50,9 @@
             <div class="page-content">
             <p></p>
             <h1 class="iEatOutHeader">iEat Out</h1>
-              <div class="row">
-                <div class="col-50">
-                  <a href="#" class="button button-big button-fill color-green open-login-screen">Sign In</a>
-                </div>
-              <div class="col-50">
-                <a="#" class="button button-big button-fill color-red open-popup" data-popup= ".popup-signup">Sign Up</a>
-              </div>
+            <a href="#" class="button button-big button-fill color-green open-login-screen">Sign In</a>
+            <p></p>
+            <a="#" class="button button-big button-fill color-red open-popup" data-popup= ".popup-signup">Sign Up</a>
             </div> 
               <div class="content-block-title"><!-- Side panels --></div>
               <div class="content-block">
@@ -143,7 +139,18 @@
         </div>
       </div>
     </li>
-    ...
+    <!-- Password -->
+    <li>
+      <div class="item-content">
+        <div class="item-media"><i class="icon icon-form-calendar"></i></div>
+        <div class="item-inner">
+          <div class="item-title label">Password</div>
+            <div class="item-input">
+              <input type="password" name="password" placeholder="Your password">
+            </div>
+        </div>
+      </div>
+    </li>
     <!-- Select -->
     <li>
       <div class="item-content">
@@ -159,45 +166,20 @@
         </div>
       </div>
     </li>
-    <!-- Date -->
-    <li>
-      <div class="item-content">
-        <div class="item-media"><i class="icon icon-form-calendar"></i></div>
-        <div class="item-inner">
-          <div class="item-title label">Birth date</div>
-          <div class="item-input">
-            <input type="date" placeholder="Birth day" value="2014-04-30">
+
+    <p></p>
+    <a="#" class="button button-big button-fill color-green">Register</a>
+    <!-- Allergy List -->
+    <!-- <li>
+      <div class="item-count">
+        <div class="item-media"><i class="icon demo-icon-1">
+          <div class="item-inner">
+            <div class="item-title label">Allergies</div>
+
           </div>
         </div>
       </div>
-    </li>
-    <!-- Date time-->
-    <li>
-      <div class="item-content">
-        <div class="item-media"><i class="icon icon-form-calendar"></i></div>
-        <div class="item-inner">
-          <div class="item-title label">Date time</div>
-          <div class="item-input">
-            <input type="datetime-local">
-          </div>
-        </div>
-      </div>
-    </li>
-    <!-- Switch (Checkbox) -->
-    <li>
-      <div class="item-content">
-        <div class="item-media"><i class="icon icon-form-toggle"></i></div>
-        <div class="item-inner">
-          <div class="item-title label">Switch</div>
-          <div class="item-input">
-            <label class="label-switch">
-              <input type="checkbox">
-              <div class="checkbox"></div>
-            </label>
-          </div>
-        </div>
-      </div>
-    </li>
+    </li> -->
     <!-- Slider (Range input) -->
     <li>
       <div class="item-content">
@@ -208,18 +190,6 @@
             <div class="range-slider">
               <input type="range" min="0" max="100" value="50" step="0.1">
             </div>
-          </div>
-        </div>
-      </div>
-    </li>
-    <!-- Textarea -->
-    <li class="align-top">
-      <div class="item-content">
-        <div class="item-media"><i class="icon icon-form-comment"></i></div>
-        <div class="item-inner">
-          <div class="item-title label">Textarea</div>
-          <div class="item-input">
-            <textarea></textarea>
           </div>
         </div>
       </div>
