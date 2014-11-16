@@ -87,3 +87,7 @@ function profileSubmit() {
 }
 
 $('#ieo-profile-submit').click(function (e) { profileSubmit(); });
+
+function mainClick(ele) {
+    mainView.router.loadPage('list.html#' + encodeURIComponent($(ele).children(".item-title").text()));
+}
