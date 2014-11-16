@@ -93,7 +93,7 @@
             </div>
             <div class="list-block">
               <ul>
-                <li><a id="ieo-login-submit" href="#" class="item-link list-button">Sign In</a></li>
+                <li><a id="ieo-login-submit" href="#" class="item-link list-button" onclick="getLocation()">Sign In</a></li>
               </ul>
               <div class="list-block-label">
                 <p>Enjoy your meal!</p>
@@ -155,6 +155,20 @@
     </div>
   </div>
     <!-- jQuery -->
+    <script>
+    var x = document.getElementById("demo");
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+      }
+    }
+    function showPosition(position) {
+      x.innerHTML = "Latitude: " + position.coords.latitude + 
+        "<br>Longitude: " + position.coords.longitude; 
+    }
+</script>
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <!-- Firebase -->
     <script type="text/javascript" src="js/firebase.js"></script>
