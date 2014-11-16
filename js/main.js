@@ -22,7 +22,7 @@ $('#ieo-login-submit').click(function (e) {
            fw.alert(error.message, 'Error');
        } else {
            fw.alert('Login success!', 'Success', function (e) {
-               fb.child('profiles').once('value', fb.getAuth().uid, function(data) {
+               fb.child('profiles/' + fb.getAuth().uid).once('value', function(data) {
                    if (data.val() == null) {
                        mainView.router.loadPage('health.html');
                    } else {
