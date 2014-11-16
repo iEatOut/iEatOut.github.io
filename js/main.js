@@ -24,7 +24,7 @@ $('#ieo-login-submit').click(function (e) {
            fw.alert('Login success!', 'Success', function (e) {
                fb.child('profiles/' + fb.getAuth().uid).once('value', function(data) {
                    if (data.val()) {
-                       mainView.router.loadPage('main.html');
+                       mainView.router.loadPage('list.html');
                    } else {
                        mainView.router.loadPage('health.html');
                    }
@@ -56,6 +56,31 @@ $('#ieo-register-submit').click(function (e) {
     });
 });
 
+function retrieveHealth() {
+    mainView.router.loadPage("health.html");
+    fb.child('profiles/' + fb.getAuth().uid).once('value', function(data) {
+        var info = data.val();
+        if (info) {
+            $('#ieo-profile-name').val(info["name"]);
+            $('#ieo-profile-gender').val(info["gender"]);
+            $('#ieo-profile-allergies-dairy').prop('checked', info["dairy"]);
+            $('#ieo-profile-allergies-egg').prop('checked', info["egg"]);
+            $('#ieo-profile-allergies-gluten').prop('checked', info["gluten"]);
+            $('#ieo-profile-allergies-peanuts').prop('checked', info["peanuts"]);
+            $('#ieo-profile-allergies-seafood').prop('checked', info["seafood"]);
+            $('#ieo-profile-allergies-sesame').prop('checked', info["sesame"]);
+            $('#ieo-profile-allergies-soy').prop('checked', info["soy"]);
+            $('#ieo-profile-allergies-treenuts').prop('checked', info["treenuts"]);
+            $('#ieo-profile-allergies-wheat').prop('checked', info["wheat"]);
+            $('#ieo-profile-diet').val(info["diet"]);
+            $('#ieo-profile-heartdisease').val(info["heartdisease"]);
+            $('#ieo-profile-alcoholtobacco').val(info["alcoholtobacco"]);
+        }
+    }, function (error) {
+        fw.alert(error.message, 'Error');
+    });
+}
+
 function profileSubmit() {
     var ref = fb.child('profiles/' + fb.getAuth().uid);
     ref.set({
@@ -80,7 +105,7 @@ function profileSubmit() {
             fw.alert(error.message, 'Error');
         } else {
             fw.alert('Profile successfully recorded!', 'Success', function (e) {
-                mainView.router.loadPage('main.html');
+                mainView.router.loadPage('list.html');
             });
         }
     });
