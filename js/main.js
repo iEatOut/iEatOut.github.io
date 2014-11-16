@@ -41,7 +41,8 @@ $$(document).on('pageAfterAnimation', function (e) {
 });
 
 $$(document).on('pageInit', function (e) {
-    if ($(e.target).data("page") == "health") {
+    var target = $(e.target);
+    if (target.data("page") == "health") {
         fb.child('profiles/' + fb.getAuth().uid).once('value', function(data) {
             var info = data.val();
 
@@ -64,6 +65,17 @@ $$(document).on('pageInit', function (e) {
             }
         }, function (error) {
             fw.alert(error.message, 'Error');
+        });
+    } else if (target.data("page") == "list") {
+        $.getJSON("https://maps.googleapis.com/maps/api/geocode/json?latlng=" +
+        lat + "," + long + "&key=AIzaSyATwdAhys3Yde0-OA0vLabSkOqsM4KZJm8", function(data) {
+            var results = data["results"];
+            for (var i = 0; i < results.length; i++) {
+                if ($.inArray("locality", results[i]["types"])) {
+                    $("#ieo-results-title").text("Results for Near " + results[i]["short_name"]);
+                    break;
+                }
+            }
         });
     }
 });
@@ -123,10 +135,26 @@ $('#ieo-profile-submit').click(function (e) { profileSubmit(); });
 var page;
 
 function mainClick(ele) {
-    page = $(ele).children(".item-title").text();
+    page = $(ele).children('.item-title').text();
     mainView.router.loadPage('list.html');
 }
 
 function back() {
     mainView.router.back();
+}
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        fw.alert('Location not available for this browser!', 'Error');
+    }
+}
+
+var lat;
+var long;
+
+function showPosition(position) {
+    lat = position.coords.latitude;
+    long = position.coords.longitude;
 }
