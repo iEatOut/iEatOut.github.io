@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html background="/css/background.jpg">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>iEatOut</title>
+    <!-- Path to Framework7 Library CSS-->
+    <link rel="stylesheet" href="css/framework7.min.css">
+    <!-- Path to your custom app styles-->
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <!-- Status bar overlay for fullscreen mode-->
+    <div class="statusbar-overlay"></div>
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    <!-- Left panel with reveal effect-->
+    <div class="panel panel-left panel-reveal">
+      <div class="content-block">
+        <p>About Us</p>
+        <p>HackDuke '14 Hack</p>
+        <p>Anirudh Gubba, Nikhil Kulkarni, Saurabh Kumar, Shuyang Chen</p>
+      </div>
+    </div>
+    <!-- Right panel with cover effect-->
+    <div class="panel panel-right panel-cover">
+      <div class="content-block">
+        <p>Right panel content goes here</p>
+      </div>
+    </div>
+    <!-- Views-->
+    <div class="views">
+      <!-- Your main view, should have "view-main" class-->
+      <div class="view view-main">
+        <!-- Top Navbar-->
+        <div class="navbar">
+          <div class="navbar-inner">
+            <!-- We have home navbar without left link-->
+            <div class="center sliding">iEatOut</div>
+            <div class="Right">
+              <!-- Right link contains only icon - additional "icon-only" class--><a href="#" class="link icon-only open-panel" data-panel="left"> <i class="icon icon-bars"></i></a>
+            </div>
+          </div>
+        </div>
+        <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
+        <div class="pages navbar-through toolbar-through">
+          <!-- Page, data-page contains page name-->
+          <div data-page="index" class="page">
+            <!-- Scrollable page content-->
+            <div class="page-content">
+            <p></p>
+            <h1 class="iEatOutHeader">Allergies</h1>
+              <div class="content-block-title"><!-- Side panels --></div>
+              <div class="list-block">
+                <ul>
+                <!-- Single chekbox item -->
+                  <li>
+                    <label class="label-checkbox item-content">
+                    <!-- Checked by default -->
+                      <input type="checkbox" name="my-checkbox" value="Books" checked="checked">
+                      <div class="item-media">
+                        <i class="icon icon-form-checkbox"></i>
+                      </div>
+                      <div class="item-inner">
+                        <div class="item-title">Dairy</div>
+                      </div>
+                    </label>
+                  </li>
+                <!-- Another chekbox item -->
+              <li>
+                <label class="label-checkbox item-content">
+                  <input type="checkbox" name="my-checkbox" value="Movies">
+                    <div class="item-media">
+                      <i class="icon icon-form-checkbox"></i>
+                    </div>
+                    <div class="item-inner">
+                      <div class="item-title">Egg</div>
+                    </div>
+                </label>
+              </li>
+              <li>
+                <label class="label-checkbox item-content">
+                  <input type="checkbox" name="my-checkbox" value="Movies">
+                    <div class="item-media">
+                      <i class="icon icon-form-checkbox"></i>
+                    </div>
+                    <div class="item-inner">
+                      <div class="item-title">Gluten</div>
+                    </div>
+                </label>
+              </li>
+              <li>
+                <label class="label-checkbox item-content">
+                  <input type="checkbox" name="my-checkbox" value="Movies">
+                    <div class="item-media">
+                      <i class="icon icon-form-checkbox"></i>
+                    </div>
+                    <div class="item-inner">
+                      <div class="item-title">Peanuts</div>
+                    </div>
+                </label>
+              </li>
+              <li>
+                <label class="label-checkbox item-content">
+                  <input type="checkbox" name="my-checkbox" value="Movies">
+                    <div class="item-media">
+                      <i class="icon icon-form-checkbox"></i>
+                    </div>
+                    <div class="item-inner">
+                      <div class="item-title">Seafood</div>
+                    </div>
+                </label>
+              </li>
+              <li>
+                <label class="label-checkbox item-content">
+                  <input type="checkbox" name="my-checkbox" value="Movies">
+                    <div class="item-media">
+                      <i class="icon icon-form-checkbox"></i>
+                    </div>
+                    <div class="item-inner">
+                      <div class="item-title">Sesame</div>
+                    </div>
+                </label>
+              </li>
+              <li>
+                <label class="label-checkbox item-content">
+                  <input type="checkbox" name="my-checkbox" value="Movies">
+                    <div class="item-media">
+                      <i class="icon icon-form-checkbox"></i>
+                    </div>
+                    <div class="item-inner">
+                      <div class="item-title">Soy</div>
+                    </div>
+                </label>
+              </li>
+              <li>
+                <label class="label-checkbox item-content">
+                  <input type="checkbox" name="my-checkbox" value="Movies">
+                    <div class="item-media">
+                      <i class="icon icon-form-checkbox"></i>
+                    </div>
+                    <div class="item-inner">
+                      <div class="item-title">Sulfite</div>
+                    </div>
+                </label>
+              </li>
+              <li>
+                <label class="label-checkbox item-content">
+                  <input type="checkbox" name="my-checkbox" value="Movies">
+                    <div class="item-media">
+                      <i class="icon icon-form-checkbox"></i>
+                    </div>
+                    <div class="item-inner">
+                      <div class="item-title">Tree Nuts</div>
+                    </div>
+                </label>
+              </li>
+              <li>
+                <label class="label-checkbox item-content">
+                  <input type="checkbox" name="my-checkbox" value="Movies">
+                    <div class="item-media">
+                      <i class="icon icon-form-checkbox"></i>
+                    </div>
+                    <div class="item-inner">
+                      <div class="item-title">Wheat</div>
+                    </div>
+                </label>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        <!-- Bottom Toolbar-->
+        <!-- <div class="toolbar">
+          <div class="toolbar-inner"><a href="#" class="link">Link 1</a><a href="#" class="link">Link 2</a></div>
+        </div>
+      </div> -->
+    <!-- jQuery -->
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!-- Firebase -->
+    <script type="text/javascript" src="js/firebase.js"></script>
+    <!-- Path to Framework7 Library JS-->
+    <script type="text/javascript" src="js/framework7.min.js"></script>
+    <!-- Path to iEatOut js-->
+    <script type="text/javascript" src="js/main.js"></script>
+  </body>
+</html>
