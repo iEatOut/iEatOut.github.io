@@ -38,7 +38,7 @@
         <div class="navbar">
           <div class="navbar-inner">
             <!-- We have home navbar without left link-->
-            <div class="center sliding">iEatOut</div>
+            <div class="center sliding">Welcome!</div>
             <div class="Right">
               <!-- Right link contains only icon - additional "icon-only" class--><a href="#" class="link icon-only open-panel" data-panel="left"> <i class="icon icon-bars"></i></a>
             </div>
@@ -50,126 +50,10 @@
           <div data-page="index" class="page">
             <!-- Scrollable page content-->
             <div class="page-content">
-            <p></p>
-            <h1 class="iEatOutHeader">iEatOut</h1>
-            <a href="#" class="button button-big button-fill color-green open-login-screen">Sign In</a>
-            <p></p>
-            <a href="#" class="button button-big button-fill color-red open-popup" data-popup= ".popup-signup">Sign Up</a>
-            </div> 
-              <div class="content-block-title"><!-- Side panels --></div>
-              <div class="content-block">
-                <div class="row">
-<!--                   <div class="col-50"><a href="#" data-panel="left" class="button open-panel">Left Panel</a></div>
-                  <div class="col-50"><a href="#" data-panel="right" class="button open-panel">Right Panel</a></div> -->
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Bottom Toolbar-->
-        <!-- <div class="toolbar">
-          <div class="toolbar-inner"><a href="#" class="link">Link 1</a><a href="#" class="link">Link 2</a></div>
-        </div>
-      </div> -->
-    </div>
-
-    <div class="login-screen">
-    <div class="view">
-      <div class="page">
-        <div class="page-content login-screen-content">
-          <div class="login-screen-title">iEatOut</div>
-          <form method="post">
-            <div class="list-block">
-              <ul>
-                <li class="item-content">
-                  <div class="item-inner">
-                    <div class="item-title label">Email</div>
-                    <div class="item-input">
-                      <input id="ieo-login-email" type="email" name="email" placeholder="Your email">
-                    </div>
-                  </div>
-                </li>
-                <li class="item-content">
-                  <div class="item-inner">
-                    <div class="item-title label">Password</div>
-                    <div class="item-input">
-                      <input id="ieo-login-pass" type="password" name="password" placeholder="Your password">
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="list-block">
-              <ul>
-                <li><a id="ieo-login-submit" href="#" class="item-link list-button">Sign In</a></li>
-              </ul>
-              <div class="list-block-label">
-                <p>Enjoy your meal!</p>
-                <p><a href="#" class="close-login-screen">Close Login Screen</a></p>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-<div class="popup popup-signup">
-<div class="content-block-title">Sign Up</div>
-<div class="list-block">
-  <ul>
-    <!-- Text inputs -->
-    <li>
-      <div class="item-content">
-        <div class="item-media"><i class="icon icon-form-name"></i></div>
-        <div class="item-inner">
-          <div class="item-title label">Name</div>
-          <div class="item-input">
-            <input type="text" placeholder="Your name">
-          </div>
-        </div>
-      </div>
-    </li>
-    <li>
-      <div class="item-content">
-        <div class="item-media"><i class="icon icon-form-email"></i></div>
-        <div class="item-inner">
-          <div class="item-title label">Email</div>
-          <div class="item-input">
-            <input type="email" placeholder="Email">
-          </div>
-        </div>
-      </div>
-    </li>
-    <!-- Password -->
-    <li>
-      <div class="item-content">
-        <div class="item-media"><i class="icon icon-form-calendar"></i></div>
-        <div class="item-inner">
-          <div class="item-title label">Password</div>
-            <div class="item-input">
-              <input type="password" name="password" placeholder="Your password">
-            </div>
-        </div>
-      </div>
-    </li>
-    <!-- Select -->
-    <li>
-      <div class="item-content">
-        <div class="item-media"><i class="icon icon-form-gender"></i></div>
-        <div class="item-inner">
-          <div class="item-title label">Gender</div>
-          <div class="item-input">
-            <select>
-              <option>Male</option>
-              <option>Female</option>
-            </select>
-          </div>
-        </div>
-      </div>
-    </li>
-    <div class="content-block-title">Select your allergies</div>
+               <div class="content-block-title">Select your allergies</div>
       <div class="list-block">
                 <!-- Single chekbox item -->
+                <ul>
                   <li>
                     <label class="label-checkbox item-content">
                     <!-- Checked by default -->
@@ -271,6 +155,7 @@
                     </div>
                 </label>
               </li>
+            </ul>
           </div>
     
     <div class="content-block-title">Diet Restriction</div>
@@ -285,16 +170,10 @@
         <option>Vegetarian</option>
       </select>
       </div>
-
-
-    <li>
-    <p></p>
-      <a href="health.html" class="button button-big button-fill color-green">Register</a>
-    </li>
-    <p></p>
-    <li>
-      <a href="#" class="button button-big button-fill color-red close-popup">Close</a>
-    </li>
+    </div>
+  </div>
+</div>
+   
     <!-- Allergy List -->
     <!-- <li>
       <div class="item-count">
@@ -311,15 +190,6 @@
     </ul>
   </div>
 </div>
-  <div id="ieo-popover" class="popover">
-    <div class="popover-angle"></div>
-    <div class="popover-inner">
-      <div class="content-block">
-        <p id="ieo-popover-title"></p>
-        <p id="ieo-popover-text"></p>
-      </div>
-    </div>
-  </div>
     <!-- jQuery -->
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <!-- Firebase -->
