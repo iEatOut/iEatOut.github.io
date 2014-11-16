@@ -15,18 +15,18 @@ function popup(title, text, target) {
 
 $('#ieo-login-submit').click(function (e) {
    fb.authWithPassword({
-       email : $('#ieo-login-email').val(),
-       password : $('#ieo-login-pass').val()
+       'email' : $('#ieo-login-email').val(),
+       'password' : $('#ieo-login-pass').val()
    }, function(error, authData) {
        if (error) {
            fw.alert(error.message, 'Error');
        } else {
            fw.alert('Login success!', 'Success', function (e) {
-               fb.child('users').once(fb.getAuth().uid, function(data) {
+               fb.child('users').once('value', fb.getAuth().uid, function(data) {
                    if (data.val() == null) {
                        mainView.router.loadPage('health.html');
                    } else {
-
+                       mainView.router.loadPage('main.html');
                    }
                });
            });
@@ -40,8 +40,8 @@ $$(document).on('pageAfterAnimation', function (e) {
 
 $('#ieo-register-submit').click(function (e) {
     fb.createUser({
-        email : $('#ieo-register-email').val(),
-        password : $('#ieo-register-pass').val()
+        'email' : $('#ieo-register-email').val(),
+        'password' : $('#ieo-register-pass').val()
     }, function(error) {
         if (error) {
             fw.alert(error.message, 'Error');
@@ -54,16 +54,29 @@ $('#ieo-register-submit').click(function (e) {
     });
 });
 
-$('#ieo-health-submit').click(function (e) {
+$('#ieo-profile-submit').click(function (e) {
     var ref = fb.child('profiles/' + fb.getAuth().uid);
     ref.set({
-        
+        'name' : $('#ieo-profile-name').val(),
+        'gender' : $('#ieo-profile-gender').val(),
+        'allergies' : {
+            'dairy' : $('#ieo-profile-allergies-dairy').val(),
+            'egg' : $('#ieo-profile-allergies-egg').val(),
+            'gluten' : $('#ieo-profile-allergies-gluten').val(),
+            'peanuts' : $('#ieo-profile-allergies-peanuts').val(),
+            'seafood' : $('#ieo-profile-allergies-seafood').val(),
+            'sesame' : $('#ieo-profile-allergies-sesame').val(),
+            'soy' : $('#ieo-profile-allergies-soy').val(),
+            'treenuts' : $('#ieo-profile-allergies-treenuts').val(),
+            'wheat' : $('#ieo-profile-allergies-wheat').val()
+        },
+        'diet' : $('#ieo-profile-diet')
     }, function (error) {
         if (error) {
             fw.alert(error.message, 'Error');
         } else {
             fw.alert('Profile successfully recorded!', 'Success', function (e) {
-
+                mainView.router.loadPage('main.html');
             });
         }
     });
