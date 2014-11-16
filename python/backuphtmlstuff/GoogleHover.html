@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var dat = [['Allergy','Nutrition'],[.8,.1],[.4,.5],[.1,.4],[.4,.5],[.3,.5],[.6,.7],[1,1]]
+        var data = google.visualization.arrayToDataTable(dat);
+        console.log(dat);
+        var options = {
+          fontSize: 14,
+          color: '#871b47',     // The color of the text.
+          title: 'Overall Health by Restaurant',
+          hAxis: {title: '% Conducivity to Your Allergy', minValue: 0, maxValue: 1},
+          vAxis: {title: '% Conducivity to Your Nutrition', minValue: 0, maxValue: 1},
+          legend: 'none'
+        };
+
+        var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>
