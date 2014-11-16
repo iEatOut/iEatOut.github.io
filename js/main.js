@@ -60,10 +60,13 @@ $('#ieo-login-submit').click(function (e) {
        } else {
            fw.alert('Login success!', 'Success', function (e) {
                mainView.router.loadPage('health.html');
-               fw.closeModal('#ieo-login-popup');
            });
        }
    });
+});
+
+$$(document).on('pageBeforeRemove', function (e) {
+    fw.closeModal('#ieo-login-popup');
 });
 
 $('#ieo-register-submit').click(function (e) {
