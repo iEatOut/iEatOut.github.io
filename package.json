@@ -1,0 +1,57 @@
+{
+  "name": "Framework7",
+  "version": "0.9.8",
+  "description": "Full Featured HTML Framework For Building iOS 7 Apps",
+  "main": "dist/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nolimits4web/Framework7.git"
+  },
+  "keywords": [
+    "mobile", 
+    "framework", 
+    "ios 7", 
+    "ios7", 
+    "ios8", 
+    "ios 8", 
+    "iphone", 
+    "ipad", 
+    "apple", 
+    "phonegap", 
+    "native", 
+    "touch", 
+    "appstore", 
+    "app", 
+    "f7"
+  ],
+  "author": "Vladimir Kharlampidi",
+  "license": [
+    "MIT"
+  ],
+  "bugs": {
+    "url": "https://github.com/nolimits4web/Framework7/issues"
+  },
+  "homepage": "http://www.idangero.us/framework7/",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "load-grunt-tasks": "~0.6.0",
+    "jshint": "~2.5.6",
+    "grunt-contrib-concat": "~0.5.0",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-uglify": "~0.6.0",
+    "grunt-contrib-less": "^0.11.4",
+    "grunt-contrib-jade": "~0.13.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-contrib-copy": "~0.6.0",
+    "grunt-contrib-connect": "~0.8.0",
+    "grunt-open": "~0.2.3",
+    "jshint-stylish": "~1.0.0",
+    "time-grunt": "~1.0.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  }
+}
