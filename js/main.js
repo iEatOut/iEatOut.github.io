@@ -72,7 +72,9 @@ function profileSubmit() {
             'treenuts' : $('#ieo-profile-allergies-treenuts').val(),
             'wheat' : $('#ieo-profile-allergies-wheat').val()
         },
-        'diet' : $('#ieo-profile-diet').val()
+        'diet' : $('#ieo-profile-diet').val(),
+        'heartdisease' : $('#ieo-profile-heartdisease').val(),
+        'alcoholtobacco' : $('#ieo-profile-alcoholtobacco')
     }, function (error) {
         if (error) {
             fw.alert(error.message, 'Error');
