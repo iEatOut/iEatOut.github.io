@@ -51,18 +51,19 @@ function popup(title, text, target) {
 }
 
 $('#ieo-login-submit').click(function (e) {
-    fw.alert('Login success!', 'Success', function (e) {
-        mainView.router.loadPage('health.html');
-    });
-   /*fb.authWithPassword({
+   fb.authWithPassword({
        email    : $('#ieo-login-email').val(),
        password : $('#ieo-login-pass').val()
    }, function(error, authData) {
        if (error) {
            fw.alert(error.message, 'Error');
        } else {
+           fw.alert('Login success!', 'Success', function (e) {
+               mainView.router.loadPage('health.html');
+               fw.closeModal('#ieo-login-popup');
+           });
        }
-   });*/
+   });
 });
 
 $('#ieo-register-submit').click(function (e) {
