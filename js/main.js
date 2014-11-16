@@ -48,15 +48,16 @@ $$(document).on('pageInit', function (e) {
             if (info) {
                 $('#ieo-profile-name').val(info["name"]);
                 $('#ieo-profile-gender').val(info["gender"]);
-                $('#ieo-profile-allergies-dairy').prop('checked', info["dairy"]);
-                $('#ieo-profile-allergies-egg').prop('checked', info["egg"]);
-                $('#ieo-profile-allergies-gluten').prop('checked', info["gluten"]);
-                $('#ieo-profile-allergies-peanuts').prop('checked', info["peanuts"]);
-                $('#ieo-profile-allergies-seafood').prop('checked', info["seafood"]);
-                $('#ieo-profile-allergies-sesame').prop('checked', info["sesame"]);
-                $('#ieo-profile-allergies-soy').prop('checked', info["soy"]);
-                $('#ieo-profile-allergies-treenuts').prop('checked', info["treenuts"]);
-                $('#ieo-profile-allergies-wheat').prop('checked', info["wheat"]);
+                var allergies = info["allergies"];
+                $('#ieo-profile-allergies-dairy').prop('checked', allergies["dairy"]);
+                $('#ieo-profile-allergies-egg').prop('checked', allergies["egg"]);
+                $('#ieo-profile-allergies-gluten').prop('checked', allergies["gluten"]);
+                $('#ieo-profile-allergies-peanuts').prop('checked', allergies["peanuts"]);
+                $('#ieo-profile-allergies-seafood').prop('checked', allergies["seafood"]);
+                $('#ieo-profile-allergies-sesame').prop('checked', allergies["sesame"]);
+                $('#ieo-profile-allergies-soy').prop('checked', allergies["soy"]);
+                $('#ieo-profile-allergies-treenuts').prop('checked', allergies["treenuts"]);
+                $('#ieo-profile-allergies-wheat').prop('checked', allergies["wheat"]);
                 $('#ieo-profile-diet').val(info["diet"]);
                 $('#ieo-profile-heartdisease').val(info["heartdisease"]);
                 $('#ieo-profile-alcoholtobacco').val(info["alcoholtobacco"]);
