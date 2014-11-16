@@ -74,7 +74,7 @@ function profileSubmit() {
         },
         'diet' : $('#ieo-profile-diet').val(),
         'heartdisease' : $('#ieo-profile-heartdisease').val(),
-        'alcoholtobacco' : $('#ieo-profile-alcoholtobacco')
+        'alcoholtobacco' : $('#ieo-profile-alcoholtobacco').val()
     }, function (error) {
         if (error) {
             fw.alert(error.message, 'Error');
