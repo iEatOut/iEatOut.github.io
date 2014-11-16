@@ -8,7 +8,7 @@ import pylab
 #Add labels
 #Color code
 #Add title
-filename = "C:\Users\Anirudh\Desktop\iEatOut.github.io\python\data.txt"
+filename = "C:\Users\Anirudh\Desktop\iEatOut.github.io\python\datan.txt"
 #filename = "data.txt" 
 with open(filename) as f:
     datum = f.readlines()
@@ -43,10 +43,10 @@ if 1: # picking on a scatter plot (matplotlib.collections.RegularPolyCollection)
     ax1.grid('on')
     ttl = ax1.title
     ttl.set_weight('bold')
-    plt.title("Overall Health by Restaurant Against Price")
+    plt.title("Overall Health by Restaurant Against YOUR Nutrition")
     plt.xlabel("Conducivity to Your Allergy")
-    plt.ylabel("Average Price of Restaurant")
-    plt.axis([0, 1.02, 0, 50])
+    plt.ylabel("Conducivity to Your Health")
+    plt.axis([0, 1.02, 0, 1.02])
     plt.tick_params(axis="both", which="both", bottom="off", top="off",  
                 labelbottom="on", left="off", right="off", labelleft="on") 
     x1 = [1]
@@ -56,17 +56,17 @@ if 1: # picking on a scatter plot (matplotlib.collections.RegularPolyCollection)
     x = polyShape[1]
     y = polyShape[2]
     col = ax1.scatter(x1, x2,marker='+', s=150, linewidths=4, c='r', cmap=plt.cm.coolwarm)
-    cola = ax1.scatter(x, y,marker='+', s=150, linewidths=4, c='b', cmap=plt.cm.coolwarm)
+    cola = ax1.scatter(x, y,marker='+', s=150, linewidths=4, c='g', cmap=plt.cm.coolwarm)
     for i, txt in enumerate(polyShape[0]):
-        ax1.annotate(txt, (x[i],y[i]))   
+        ax1.annotate(txt, (x[i],y[i]))
     plt.legend((col,cola),
         ('You (Ideal)', 'Each Restaurant'),
         scatterpoints=1,
-        loc='lower left',
+        loc='lower right',
         ncol=3,
-        fontsize=8)
-    fig.savefig('C:\Users\Anirudh\Desktop\iEatOut.github.io\python\outputprice.jpg')
-
+        fontsize=8)   
+    #fig.savefig('pscoll.eps')
+    fig.savefig('C:\Users\Anirudh\Desktop\iEatOut.github.io\python\outputN.jpg')
     #fig.savefig('foo.jpg')
     #fig.canvas.mpl_connect('pick_event', onpick3)
     show()
