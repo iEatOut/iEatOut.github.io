@@ -5,7 +5,7 @@ var fb = new Firebase('https://sizzling-inferno-727.firebaseio.com');
 // Export selectors engine
 var $$ = Dom7;
 
-var mainView = fw.addView('#ieo-view', { dynamicNavbar: true });
+var mainView = fw.addView('.view-main', { dynamicNavbar: true });
 
 function popup(title, text, target) {
     $('#ieo-popover-title').text(title);
@@ -23,11 +23,12 @@ $('#ieo-login-submit').click(function (e) {
        } else {
            fw.alert('Login success!', 'Success', function (e) {
                fb.child('profiles/' + fb.getAuth().uid).once('value', function(data) {
-                   if (data.val()) {
+                   mainView.router.loadPage('main.html');
+                   /*if (data.val()) {
                        mainView.router.loadPage('main.html');
                    } else {
                        mainView.router.loadPage('health.html');
-                   }
+                   }*/
                }, function (error) {
                    fw.alert(error.message, 'Error');
                });
