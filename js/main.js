@@ -1,17 +1,18 @@
 // Initialize your app
-var myApp = new Framework7();
+var fw = new Framework7();
+var fb = new Firebase('https://sizzling-inferno-727.firebaseio.com');
 
 // Export selectors engine
 var $$ = Dom7;
 
 // Add view
-var mainView = myApp.addView('.view-main', {
+var mainView = fw.addView('.view-main', {
     // Because we use fixed-through navbar we can enable dynamic navbar
     dynamicNavbar: true
 });
 
 // Callbacks to run specific code for specific pages, for example for About page:
-myApp.onPageInit('about', function (page) {
+fw.onPageInit('about', function (page) {
     // run createContentPage func after link was clicked
     $$('.create-page').on('click', function () {
         createContentPage();
@@ -46,3 +47,7 @@ function createContentPage() {
     );
 	return;
 }
+
+$('#ieo-login').click(function (e) {
+   fb.authWithPass
+});

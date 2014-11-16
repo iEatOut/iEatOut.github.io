@@ -9,7 +9,7 @@
     <!-- Path to Framework7 Library CSS-->
     <link rel="stylesheet" href="css/framework7.min.css">
     <!-- Path to your custom app styles-->
-    <link rel="stylesheet" href="css/my-app.css">
+    <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
     <!-- Status bar overlay for fullscreen mode-->
@@ -52,7 +52,7 @@
             <h1 class="iEatOutHeader">iEat Out</h1>
             <a href="#" class="button button-big button-fill color-green open-login-screen">Sign In</a>
             <p></p>
-            <a="#" class="button button-big button-fill color-red open-popup" data-popup= ".popup-signup">Sign Up</a>
+            <a href="#" class="button button-big button-fill color-red open-popup" data-popup= ".popup-signup">Sign Up</a>
             </div> 
               <div class="content-block-title"><!-- Side panels --></div>
               <div class="content-block">
@@ -99,7 +99,7 @@
             </div>
             <div class="list-block">
               <ul>
-                <li><a href="#" onclick="submit()" class="item-link list-button">Sign In</a></li>
+                <li><a id="ieo-login" href="#" class="item-link list-button">Sign In</a></li>
               </ul>
               <div class="list-block-label">
                 <p>Enjoy your meal!</p>
@@ -112,7 +112,7 @@
     </div>
   </div>
 
-<div class="popup popup-signup">
+<div class="popup popup-signup"></div>
     <div class="content-block-title">Full Layout</div>
 <div class="list-block">
   <ul>
@@ -168,9 +168,9 @@
     </li>
 
     <p></p>
-    <a="#" class="button button-big button-fill color-green">Register</a>
+    <a href="#" class="button button-big button-fill color-green">Register</a>
     <p></p>
-    <a="#" class="button button-big button-fill color-green close-popup">Close</a>
+    <a href="#" class="button button-big button-fill color-green close-popup">Close</a>
     <!-- Allergy List -->
     <!-- <li>
       <div class="item-count">
@@ -185,14 +185,13 @@
     <!-- Slider (Range input) -->
   </ul>
   </div>
+    <!-- jQuery -->
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!-- Firebase -->
+    <script type="text/javascript" src="js/firebase.js"></script>
     <!-- Path to Framework7 Library JS-->
     <script type="text/javascript" src="js/framework7.min.js"></script>
-    <script>
-    function submit() {
-
-    }
-    </script>
-    <!-- Path to your app js-->
-    <script type="text/javascript" src="js/my-app.js"></script>
+    <!-- Path to iEatOut js-->
+    <script type="text/javascript" src="js/main.js"></script>
   </body>
 </html>
