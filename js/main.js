@@ -22,7 +22,13 @@ $('#ieo-login-submit').click(function (e) {
            fw.alert(error.message, 'Error');
        } else {
            fw.alert('Login success!', 'Success', function (e) {
-               mainView.router.loadPage('health.html');
+               fb.child('users').once(fb.getAuth().uid, function(data) {
+                   if (data.val() == null) {
+                       mainView.router.loadPage('health.html');
+                   } else {
+
+                   }
+               });
            });
        }
    });
@@ -43,6 +49,21 @@ $('#ieo-register-submit').click(function (e) {
             fw.alert('Registration success!\nLogin to continue.', 'Success', function (e) {
                 fw.closeModal('#ieo-register-popup');
                 fw.popup('#ieo-login-popup');
+            });
+        }
+    });
+});
+
+$('#ieo-health-submit').click(function (e) {
+    var ref = fb.child('profiles/' + fb.getAuth().uid);
+    ref.set({
+        
+    }, function (error) {
+        if (error) {
+            fw.alert(error.message, 'Error');
+        } else {
+            fw.alert('Profile successfully recorded!', 'Success', function (e) {
+
             });
         }
     });
