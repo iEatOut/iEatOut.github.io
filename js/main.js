@@ -48,6 +48,21 @@ function createContentPage() {
 	return;
 }
 
-$('#ieo-login').click(function (e) {
-   fb.authWithPass
+function popup(title, text, target) {
+    $('#ieo-popover-title').text(title);
+    $('#ieo-popover-text').text(text);
+    fw.popover('#ieo-popover', target);
+}
+
+$('#ieo-login-submit').click(function (e) {
+   fb.authWithPassword({
+       "email"    : $('#ieo-login-email').val(),
+       "password" : $('#ieo-login-pass').val()
+   }, function(error, authData) {
+       if (error) {
+           popup('Error', error.message, '#ieo-login-submit');
+       } else {
+           popup('Success', 'Login success!', '#ieo-login-submit');
+       }
+   });
 });

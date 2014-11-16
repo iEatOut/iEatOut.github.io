@@ -83,9 +83,9 @@
               <ul>
                 <li class="item-content">
                   <div class="item-inner">
-                    <div class="item-title label">Username</div>
+                    <div class="item-title label">Email</div>
                     <div class="item-input">
-                      <input type="text" name="username" placeholder="Your username">
+                      <input id="ieo-login-email" type="email" name="email" placeholder="Your email">
                     </div>
                   </div>
                 </li>
@@ -93,7 +93,7 @@
                   <div class="item-inner">
                     <div class="item-title label">Password</div>
                     <div class="item-input">
-                      <input type="password" name="password" placeholder="Your password">
+                      <input id="ieo-login-pass" type="password" name="password" placeholder="Your password">
                     </div>
                   </div>
                 </li>
@@ -101,7 +101,7 @@
             </div>
             <div class="list-block">
               <ul>
-                <li><a id="ieo-login" href="#" class="item-link list-button">Sign In</a></li>
+                <li><a id="ieo-login-submit" href="#" class="item-link list-button">Sign In</a></li>
               </ul>
               <div class="list-block-label">
                 <p>Enjoy your meal!</p>
@@ -113,8 +113,8 @@
       </div>
     </div>
   </div>
-<div class="popup popup-signup">
-    <div class="content-block-title">Sign Up</div>
+<div class="popup popup-signup"></div>
+<div class="content-block-title">Sign Up</div>
 <div class="list-block">
   <ul>
     <!-- Text inputs -->
@@ -133,9 +133,9 @@
       <div class="item-content">
         <div class="item-media"><i class="icon icon-form-email"></i></div>
         <div class="item-inner">
-          <div class="item-title label">E-mail</div>
+          <div class="item-title label">Email</div>
           <div class="item-input">
-            <input type="email" placeholder="E-mail">
+            <input type="email" placeholder="Email">
           </div>
         </div>
       </div>
@@ -190,8 +190,17 @@
     <!-- Slider (Range input) -->
   </ul>
   </div>
+  <div id="ieo-popover" class="popover">
+    <div class="popover-angle"></div>
+    <div class="popover-inner">
+      <div class="content-block">
+        <p id="ieo-popover-title"></p>
+        <p id="ieo-popover-text"></p>
+      </div>
+    </div>
+  </div>
     <!-- jQuery -->
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
     <!-- Firebase -->
     <script type="text/javascript" src="js/firebase.js"></script>
     <!-- Path to Framework7 Library JS-->
