@@ -1,0 +1,7 @@
+Low Sodium	&nutrition.NA.min=0&nutrition.NA.max=140
+Low Cholesterol	&nutrition.CHOLE.min=0&nutrition.CHOLE.max=20
+Low Trans Fat	&nutrition.FATRN.min=20&nutrition.FATRN.max=50		
+Low Sugar	&nutrition.SUGAR.min=20&nutrition.SUGAR.max=50
+High Protein	&nutrition.PROCNT.min=20&nutrition.PROCNT.max=50
+Low Carbs	&nutrition.CHOCDF.min=20&nutrition.CHOCDF.max=50
+High Fiber	&nutrition.FIBTG.min=20&nutrition.FIBTG.max=50
