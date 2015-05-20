@@ -1,166 +1,179 @@
-<!DOCTYPE html>
-<html background="/css/background.jpg">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+<!doctype html>
+<html>
+<head>
     <title>iEatOut</title>
-    <!-- Path to Framework7 Library CSS-->
-    <link rel="stylesheet" href="css/framework7.min.css">
-    <!-- Path to your custom app styles-->
-    <link rel="stylesheet" href="css/main.css">
-  </head>
-  <body>
-    <!-- Status bar overlay for fullscreen mode-->
-    <div class="statusbar-overlay"></div>
-    <!-- Panels overlay-->
-    <div class="panel-overlay"></div>
-    <!-- Left panel with reveal effect-->
-    <div class="panel panel-left panel-reveal">
-      <div class="content-block">
-        <p>About Us</p>
-        <p>HackDuke '14 Hack</p>
-        <p>Anirudh Gubba, Nikhil Kulkarni, Saurabh Kumar, Shuyang Chen</p>
-      </div>
-    </div>
-    <!-- Right panel with cover effect-->
-    <div class="panel panel-right panel-cover">
-      <div class="content-block">
-        <p>Right panel content goes here</p>
-      </div>
-    </div>
-    <!-- Views-->
-    <div class="views">
-      <!-- Your main view, should have "view-main" class-->
-      <div class="view view-main">
-        <!-- Top Navbar-->
-        <div class="navbar">
-          <div class="navbar-inner">
-            <div class="center sliding">iEatOut</div>
-            <div class="right">
-              <a href="#" class="link icon-only open-panel" data-panel="left"><i class="icon icon-bars"></i></a>
-            </div>
-          </div>
-        </div>
-        <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
-        <div class="pages navbar-through toolbar-through">
-          <!-- Page, data-page contains page name-->
-          <div data-page="index" class="page">
-            <!-- Scrollable page content-->
-            <div class="page-content">
-            <p></p>
-            <h1 class="iEatOutHeader">iEatOut</h1>
-            <a href="#" class="button button-big button-fill color-green open-login-screen">Sign In</a>
-            <p></p>
-            <a href="#" class="button button-big button-fill color-red open-popup" data-popup= ".popup-signup">Sign Up</a>
-            </div>
-              <div class="content-block-title"><!-- Side panels --></div>
-              <div class="content-block">
-                <div class="row">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="JS/responsiveslides.min.js"></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type="text/css">
+    	#bar {
+    		background-color: #301d1d;
+    		width: 100%;
+    		height: 60px;
+    		font-family: 'Felix Titling';
+    		color: white;
+    		font-weight: bold;
+    	}
+    	.fixed_width {
+    		width: 1200px;
+	    	margin: 0 auto;
+    	}
+    	body, div,p,ul,li {
+    		margin: 0px;
+    		padding: 0px;
+    	}
+    	#logo {
+    		width: 80%;
+    		height: 80%;
+    		border-radius: 90px;
+    		border:#301d1d 5px solid;
+    		padding-top: 1px;
+    		float: left;
+    	}
+    	#ieatout {
+    		margin-left: 0px;
+    		padding-top: 18px;
+    		float: left;
+    		padding-right: 10px;
+    		padding-bottom: 14px;	
+    		background-color: #301d1d;
+    	}
+    	.headerfont {
+    		color: white;
+    		font-weight: bold;
+    		font-size: 1.5em;
+    	}
+    	#imgdiv {
+    		float: left;
+    		height: 56px;
+    		width: 60px;
+    		padding-left: 5px;
+    		padding-top: 2px;
+    		padding-bottom: 2px;
+    	}
+    	#list {
+	    	margin-left: 1060px;
+	    	padding-top: 20px;
+	    	width: 210px;
+	    	list-style-type: none;
+	    	height: 38px;
+	    }
+	    .lione {
+	    	display: inline;
+	    	padding-right: 15px;
+			padding-bottom: 10px;
+	    	padding-left: 15px;	    	
+	    	padding-top: 8px;
+	    	text-align: center;
+	    	/*border-right: #301d1d 20px solid;*/
+	    	border: white 1px solid;
+	    }
+	    a:link, a:visited, a:hover, a:active {
+	    	color: white;
+	    	font-weight: bold;
+	    	text-decoration: none;
+	    }
+		.rslides {
+		  position: relative;
+		  list-style: none;
+		  overflow: hidden;
+		  width: 100%;
+		  padding: 0;
+		  margin: 0;
+		}
+		.rslides li {
+		  -webkit-backface-visibility: hidden;
+		  position: absolute;
+		  display: none;
+		  width: 100%;
+		  left: 0;
+		  top: 0;
+		}
+		.rslides li:first-child {
+		  position: relative;
+		  display: block;
+		  float: left;
+		 }
+		.rslides img {
+		  display: block;
+		  height: auto;
+		  float: left;
+		  width: 100%;
+		  border: 0;
+		 }
+		 #S2 {
+		 	margin-left: 10px;
+		 }
+    </style>
+</head>
 
-    <div id="ieo-login-popup" class="login-screen">
-    <div class="view">
-      <div class="page">
-        <div class="page-content login-screen-content">
-          <div class="login-screen-title">iEatOut</div>
-          <form method="post">
-            <div class="list-block">
-              <ul>
-                <li class="item-content">
-                  <div class="item-inner">
-                    <div class="item-title label">Email</div>
-                    <div class="item-input">
-                      <input id="ieo-login-email" type="email" name="email" placeholder="Your email">
-                    </div>
-                  </div>
-                </li>
-                <li class="item-content">
-                  <div class="item-inner">
-                    <div class="item-title label">Password</div>
-                    <div class="item-input">
-                      <input id="ieo-login-pass" type="password" name="password" placeholder="Your password">
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="list-block">
-              <ul>
-                <li><a id="ieo-login-submit" href="#" class="item-link list-button" onclick="getLocation()">Sign In</a></li>
-              </ul>
-              <div class="list-block-label">
-                <p>Enjoy your meal!</p>
-                <p><a href="#" class="close-login-screen">Close Login Screen</a></p>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-<div id="ieo-register-popup" class="popup popup-signup">
-<div class="content-block-title">Sign Up</div>
-  <div class="list-block">
-    <ul>
-      <!-- Text inputs -->
-      <li>
-        <div class="item-content">
-          <div class="item-media"><i class="icon icon-form-email"></i></div>
-            <div class="item-inner">
-            <div class="item-title label">Email</div>
-            <div class="item-input">
-              <input id="ieo-register-email" type="email" placeholder="Email">
-            </div>
-          </div>
-        </div>
-      </li>
-      <!-- Password -->
-      <li>
-        <div class="item-content">
-          <div class="item-media"><i class="icon icon-form-calendar"></i></div>
-          <div class="item-inner">
-            <div class="item-title label">Password</div>
-            <div class="item-input">
-              <input id="ieo-register-pass" type="password" name="password" placeholder="Your password">
-            </div>
-          </div>
-        </div>
-      </li>
-      <!-- Select -->
-      <li>
-        <p></p>
-        <a id="ieo-register-submit" href="#" class="button button-big button-fill color-green">Register</a>
-      </li>
-      <p></p>
-      <li>
-        <a href="#" class="button button-big button-fill color-red close-popup">Close</a>
-      </li>
-    </ul>
-  </div>
-</div>
-  <div id="ieo-popover" class="popover">
-    <div class="popover-angle"></div>
-    <div class="popover-inner">
-      <div class="content-block">
-        <p id="ieo-popover-title"></p>
-        <p id="ieo-popover-text"></p>
-      </div>
-    </div>
-  </div>
-    <!-- jQuery -->
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <!-- Firebase -->
-    <script type="text/javascript" src="js/firebase.js"></script>
-    <!-- Path to Framework7 Library JS-->
-    <script type="text/javascript" src="js/framework7.min.js"></script>
-    <!-- Path to iEatOut js-->
-    <script type="text/javascript" src="js/main.js"></script>
-  </body>
+<body>
+	<div id="bar">
+		<div class="fixed_width">
+			<a id="homelink" href="http://google.com">
+				<div id="home">
+					<div id="imgdiv"><img id="logo" src="Images/Logo.jpg"></div>
+					<div id="ieatout" class="headerfont"><p>iEatOut</p></div>
+				</div>				
+			</a>
+			<div id="listDiv">
+				<ul id="list">
+					<a href="http://google.com"><li class="lione" id="S1">Sign Up</li></a>
+					<a href="http://google.com"><li class="lione" id="S2">Sign In</li></a>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<ul class="rslides">
+	 	<li><img src="Images/finedining.png" alt=""></li>
+		<li><img src="Images/perfect.jpg" alt=""></li>
+		<li><img src="Images/explore.jpg" alt=""></li>
+	</ul>
+	<script type="text/javascript">
+		document.getElementById("home").onmouseover=function() {
+			document.getElementById("ieatout").style.backgroundColor="#3a3636";
+			document.getElementById("imgdiv").style.backgroundColor="#3a3636";
+		}
+		document.getElementById("home").onmouseout=function() {
+			document.getElementById("ieatout").style.backgroundColor="#301d1d";
+			document.getElementById("imgdiv").style.backgroundColor="#301d1d";
+		}
+		document.getElementById("S1").onmouseover=function() {
+			document.getElementById("S1").style.backgroundColor="#3a3636";
+		}
+		document.getElementById("S1").onmouseout=function() {
+			document.getElementById("S1").style.backgroundColor="#301d1d";
+		}
+		document.getElementById("S2").onmouseover=function() {
+			document.getElementById("S2").style.backgroundColor="#3a3636";
+		}
+		document.getElementById("S2").onmouseout=function() {
+			document.getElementById("S2").style.backgroundColor="#301d1d";
+		}
+	</script>
+	<script>
+	  $(function() {
+	    	$(".rslides").responsiveSlides({
+			  auto: true,             // Boolean: Animate automatically, true or false
+			  speed: 500,            // Integer: Speed of the transition, in milliseconds
+			  timeout: 5000,          // Integer: Time between slide transitions, in milliseconds
+			  pager: false,           // Boolean: Show pager, true or false
+			  nav: false,             // Boolean: Show navigation, true or false
+			  random: false,          // Boolean: Randomize the order of the slides, true or false
+			  pause: false,           // Boolean: Pause on hover, true or false
+			  pauseControls: true,    // Boolean: Pause when hovering controls, true or false
+			  prevText: "Previous",   // String: Text for the "previous" button
+			  nextText: "Next",       // String: Text for the "next" button
+			  maxwidth: "",           // Integer: Max-width of the slideshow, in pixels
+			  navContainer: "",       // Selector: Where controls should be appended to, default is after the 'ul'
+			  manualControls: "",     // Selector: Declare custom pager navigation
+			  namespace: "rslides",   // String: Change the default namespace used
+			  before: function(){},   // Function: Before callback
+			  after: function(){}     // Function: After callback
+			});
+	  });
+	</script>
+</body>
 </html>
